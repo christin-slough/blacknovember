@@ -73,7 +73,7 @@ function openBox(){
     var s=boxSpend(),ti=tierInfo(s),top=TIERS[TIERS.length-1].at;
     var saved=boxRetail()*(1-DISC),rw=s*RW,gift=giftFor(s),ent=Math.floor(s/50);
     var gain=saved+rw+gift;
-    b.appendChild(el("div",{class:"hero"},[
+    b.appendChild(el("div",{class:"bxhero"},[
       el("span",{class:"label",text:"Look what you're stacking"}),
       el("div",{class:"big",html:money(gain)+" <em>in savings &amp; rewards</em>"}),
       el("div",{class:"note",html:"Your total is <b>"+money(s)+"</b> after my 15% (before tax and shipping)."})

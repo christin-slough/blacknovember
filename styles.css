@@ -121,11 +121,11 @@ h3.mini{font:600 .72rem/1 var(--sans);letter-spacing:.16em;text-transform:upperc
 #barText .sv{color:var(--volt);font-weight:700}
 #barText .rw{color:var(--volt)}
 .sv2{color:var(--volt);font-weight:700;font-size:.78rem;text-transform:uppercase}
-.hero{background:var(--volt);color:var(--onyx);padding:16px;display:flex;flex-direction:column;gap:4px}
-.hero .label{color:var(--onyx)}
-.hero .big{font:400 2.4rem/1 var(--display);text-transform:uppercase}
-.hero .big em{font:italic 400 1.2rem/1 var(--serif,'Playfair Display',serif);text-transform:lowercase}
-.hero .note{color:var(--onyx)}
+.bxhero{background:var(--volt);color:var(--onyx);padding:16px;display:flex;flex-direction:column;gap:4px}
+.bxhero .label{color:var(--onyx)}
+.bxhero .big{font:400 2.4rem/1 var(--display);text-transform:uppercase}
+.bxhero .big em{font:italic 400 1.2rem/1 var(--serif,'Playfair Display',serif);text-transform:lowercase}
+.bxhero .note{color:var(--onyx)}
 .bens{display:flex;flex-direction:column;gap:8px}
 .ben{display:grid;grid-template-columns:72px 1fr;gap:12px;align-items:center;padding:10px 12px}
 .ben .tok{display:flex;align-items:center;justify-content:center;font:400 1.5rem/1 var(--display);text-transform:uppercase;min-height:48px}
