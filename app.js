@@ -248,9 +248,9 @@ function ladder(){
 function vault(){
   var P=['dfaMJmNYSAFxoh1kTxFC0Q56MaOj', 'Sk5hGGMq4aMUVVbejbKuhx338FZE', 'nttQS5cp3GLzcYM5qD66BmRcr4MD', 'O751234560pd27OB669kt6O7ZR35', 'fdZOyRmmC0l0goEoFZupPI9lMI9C', 'IC8PcY0DLCsPQp6M8mub8u20Buwt', 'lMwhROfnoAevCplbu0DT0HnbedPf', 'JcAk2D8zRpBhNYCWUdenAA0n112U'];
   var src=function(i){return "https://i.brd.so/"+P[i]+".png"};
-  var L=[5,43],R=[52,43],Y=[31,47.5];
+  var L=[5.5],R=[53.2],Y=[32.5,46];
   function crop(i,side,alt){
-    var x=(side==="L"?L:R)[0],w=43,y=Y[0],h=Y[1];
+    var x=(side==="L"?L:R)[0],w=41.5,y=Y[0],h=Y[1];
     var c=el("div",{class:"crop",style:"--x:"+x+";--w:"+w+";--y:"+y+";--h:"+h});
     c.appendChild(el("img",{src:src(i),alt:alt,loading:"lazy"}));return c;
   }
