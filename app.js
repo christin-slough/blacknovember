@@ -34,7 +34,7 @@ function renderBar(){
   w.hidden=false;
   var s=boxSpend(),ti=tierInfo(s);
   var line="<b>"+n+" in my box</b> - "+money(s)+" after my 15%";
-  if(ti.next)line+="<br>"+money(ti.next.at-s)+" to "+ti.next.t;else line+="<br>Top of the ladder. Nice.";
+  if(ti.cur)line+="<br>Unlocked: "+ti.cur.t;if(ti.next)line+="<br>"+money(ti.next.at-s)+" more reaches $"+ti.next.at+": "+ti.next.t;else line+="<br>Top of the ladder. Nice.";
   $("#barText").innerHTML=line;
 }
 function openBox(){
@@ -58,7 +58,7 @@ function openBox(){
     var s=boxSpend(),ti=tierInfo(s),top=TIERS[TIERS.length-1].at;
     b.appendChild(el("div",{html:"<b>"+money(s)+"</b> after my 15% <span class='note'>(before tax and shipping)</span>"}));
     var m2=el("div",{class:"meter"},[el("i",{style:"width:"+Math.min(100,s/top*100)+"%"})]);b.appendChild(m2);
-    b.appendChild(el("p",{class:"note",text:ti.cur?("You've unlocked "+ti.cur.t+(ti.next?". "+money(ti.next.at-s)+" more gets you "+ti.next.t+".":".")):("You're "+money(TIERS[0].at-s)+" from your first entry.")}));
+    b.appendChild(el("p",{class:"note",text:ti.cur?("You've unlocked the $"+ti.cur.at+" step: "+ti.cur.t+"."+(ti.next?" "+money(ti.next.at-s)+" more reaches the $"+ti.next.at+" step: "+ti.next.t+".":"")):("You're "+money(TIERS[0].at-s)+" from your first entry.")}));
     var a=el("a",{class:"btn",href:cartLink(items),rel:"noopener",text:"Check out with my 15%"});b.appendChild(a);
     b.appendChild(el("p",{class:"note",text:"This opens checkout on the shop with everything in your cart. Your free mystery mini is added there. The ladder adds up across the month."}));
     var clr=el("button",{class:"btn ghost small",type:"button",text:"Empty my box"});clr.onclick=function(){box={};saveBox();renderBar();d.close()};b.appendChild(clr);
@@ -114,7 +114,7 @@ function card(p){
 function fill(id,list){var g=$(id);g.innerHTML="";if(!list.length){g.appendChild(el("p",{class:"empty",text:"Checking the shelves. Check back soon."}));return}list.forEach(function(p){g.appendChild(card(p))})}
 
 /* classification */
-var SKIP_T=/^(Royal Reward|Supplies|Samples|Kit|Nails|Tools|Wellness|Top|T-Shirt|Jacket|Bag|Bathing Suit|Polo|Scarf|Dress|Purse|Blouse|BackPack)$/;
+var SKIP_T=/^(HairCare|Royal Reward|Supplies|Samples|Kit|Nails|Tools|Wellness|Top|T-Shirt|Jacket|Bag|Bathing Suit|Polo|Scarf|Dress|Purse|Blouse|BackPack)$/;
 var SKIP_N=/hair|shampoo|conditioner|toothpaste|sleep|nail|repurchase|order$|free promotions|\(\d+% off\)|^🎁|kit\b|sample|retiring/i;
 function ok(p){
   var t=clean(p.title);
@@ -140,8 +140,18 @@ function featured(all){
   });
 }
 
+function loadAll(){
+  var out=[],seen={};
+  function page(n){
+    return fetch(SITE+"/products.json?limit=250&page="+n).then(function(r){return r.json()}).then(function(j){
+      var added=0;(j.products||[]).forEach(function(p){if(!seen[p.id]){seen[p.id]=1;out.push(p);added++}});
+      if(added&&n<10)return page(n+1);
+    });
+  }
+  return page(1).then(function(){return{products:out}});
+}
 function boot(){
-  fetch(SITE+"/products.json?limit=250").then(function(r){return r.json()}).then(function(j){
+  loadAll().then(function(j){
     var all=j.products.filter(ok);
     var used={};
     featured(j.products).then(function(){});
@@ -158,7 +168,7 @@ function boot(){
     fill("#g-lips",by(/^Lips$/).filter(function(p){return !isSet(p)}));
     fill("#g-eyes",by(/^Eyes$/));
     fill("#g-face",by(/^Face$/));
-    fill("#g-skin",by(/^(Treatments|Moisturizers|Bath&Body|Remover)$/));
+    fill("#g-skin",by(/^(Treatments|Moisturizers|Bath&Body|Remover|Cleanser|Masks|Multi-Use)$/));
     $("#stamp").textContent="Checked "+new Date().toLocaleString("en-US",{weekday:"short",month:"numeric",day:"numeric",hour:"numeric",minute:"2-digit"});
   }).catch(function(){
     ["#giftGrid","#g-lips","#g-eyes","#g-face","#g-skin"].forEach(function(id){var g=$(id);g.innerHTML="";g.appendChild(el("p",{class:"empty",text:"The shelves are slow to load. Refresh, or tap below to shop everything with my 15%."}))});
