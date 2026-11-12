@@ -233,6 +233,84 @@
     "NaEjq5QG5ZC6E6HfpyUHgeenvUkE.jpg:v",
     "ph9U4p7W3bQK82uGB7DFlZH37WWp.png"
    ]
+  },
+  {
+   "name": "FiberExtend Mascara",
+   "re": "fiberextend",
+   "media": [
+    "a0am6WK27QR6eyt3W3jOBcV1knks.png",
+    "btsXQ8yccRlFo75g8hIxNEesBHPv.jpg:v"
+   ]
+  },
+  {
+   "name": "Undersense Lash Primer",
+   "re": "lash primer|undersense",
+   "media": [
+    "4hYrnsiihY9WMdFxagFVYWjq6Ul6.png"
+   ]
+  },
+  {
+   "name": "EyeSense Eyeliner Pencil",
+   "re": "eyeliner pencil|eye pencil|eyesense.*pencil",
+   "media": [
+    "W2i07vBh7NKbgDIKd3YiLuOxRUq3.png",
+    "r1MX9KxnCeImduBEihoYKSALqJHV.png",
+    "dAxmsgKaEDnbgoNLO4PBluRm9RmG.png",
+    "tDdibwhU183xTSW4qqLJSduujJ8F.jpg:v"
+   ]
+  },
+  {
+   "name": "EyeSense Liquid Liner",
+   "re": "liquid liner|liquid eye|liner pen",
+   "media": [
+    "Tawld4I4nLc5329kybY9fSDH83Vc.png",
+    "P9iHZNMcy2zEp6eXjfZ3d2hQldxs.png",
+    "QGr5t3TJdkSelEPFxwmcUOWtv00N.jpeg",
+    "VsOR2UCTPii2seyikK8lIw9II602.jpg:v"
+   ]
+  },
+  {
+   "name": "BrowSense Brow Pencil",
+   "re": "brow pencil|browsense.*pencil",
+   "media": [
+    "8QYZYtsVQ71CttQqy7PDKQ23gcgO.png",
+    "rWuRW42uOIwFQVxlAT1sdfCX1cCB.png",
+    "Sy005VqaehjDx0ZirRevlYUj3nA2.png",
+    "F4m0WWg99g8va5ekTxCO8D0mJ4mX.jpg:v"
+   ]
+  },
+  {
+   "name": "BrowSense Volumizing Brow Gel",
+   "re": "brow gel|volumizing",
+   "media": [
+    "Sb3TgsHOJ4wOhDe8RWgZaUBf7EK5.png",
+    "ZVSTpEahbWsWioAolYrCn2PhxOcI.jpeg",
+    "Rzj6L4NxCFscwR3rprnCx6K2KAVZ.jpg:v",
+    "VSbwMXeO0yz7yJqgJGhHTon2sNqg.jpg:v"
+   ]
+  },
+  {
+   "name": "EyeLuminator",
+   "re": "eyeluminator",
+   "media": [
+    "Y0LQg5Xx9iy8KRhDm5x4zIuqkFbi.png",
+    "morz5NL3BVZwinZ4eOma2kY8RzNu.jpg:v"
+   ]
+  },
+  {
+   "name": "LashExtend",
+   "re": "lashextend",
+   "media": [
+    "3jswQoVLbYjatZbupFz76RMresef.png"
+   ]
+  },
+  {
+   "name": "Lashify Bloom Box",
+   "re": "bloom box|lashify",
+   "media": [
+    "NkgZhipewuleRbgyNPK5Z7DM5qAb.png",
+    "wFNLKPM9finEKzbnMySCkjEwKIjh.jpg:v"
+   ]
   }
  ]
 }
