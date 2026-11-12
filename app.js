@@ -186,7 +186,27 @@ function boot(){
     $("#featured").appendChild(el("a",{class:"btn",href:SITE+"/discount/"+CODE+"?pws="+PWS,rel:"noopener",text:"Shop with my 15%"}));
   });
 }
-function ladder(){var h=$("#ladderRows");TIERS.forEach(function(t){h.appendChild(el("div",{class:"row"},[el("span",{class:"amt",text:"$"+t.at}),el("span",{text:t.t})]))})}
+function ladder(){
+  var h=$("#ladderRows");
+  var gc={100:10,150:15,200:20,250:25,300:30};
+  TIERS.forEach(function(t){
+    var row=el("div",{class:"row"+(t.at===300?" bag":"")});
+    row.appendChild(el("span",{class:"amt",text:"$"+t.at}));
+    var txt=t.t;
+    var rw=el("span",{class:"reward"});
+    if(t.at===300){
+      rw.appendChild(el("b",{text:"6 entries + free shipping + YOUR CHOICE"}));
+      rw.appendChild(el("small",{text:"A $30 gift card, or the Lulu crossbody bag: the quilted black one with gold zippers."}));
+    }else{
+      rw.appendChild(el("b",{text:t.t.replace(" gift card"," gift card")}));
+    }
+    row.appendChild(rw);
+    if(t.at===300){row.appendChild(el("img",{class:"bagimg",src:"https://i.brd.so/athreFStJD43fZWtstfq37N9hr1o.png",alt:"Lulu crossbody bag",loading:"lazy"}))}
+    else if(gc[t.at]){row.appendChild(el("span",{class:"gc",text:"$"+gc[t.at],"aria-hidden":"true"}))}
+    else row.appendChild(el("span"));
+    h.appendChild(row);
+  });
+}
 function promo(){fetch("promo.json?"+Date.now()).then(function(r){return r.json()}).then(function(j){var h=$("#promo");(j.corporate||[]).forEach(function(x){h.appendChild(el("div",{class:"promo"},[el("span",{class:"label",text:"New from corporate"}),el("h3",{text:x.title}),el("p",{class:"sub",text:x.body}),x.link?el("a",{class:"btn small",href:x.link,rel:"noopener",text:x.cta||"Shop it"}):el("span")]))})}).catch(function(){})}
 $("#openBox").onclick=openBox;
 ladder();promo();renderBar();boot();
