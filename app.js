@@ -274,6 +274,17 @@ function vault(){
   MORE.forEach(function(x){var c=el("div",{class:"mc"});c.appendChild(crop(x[0],x[1],x[2]));m.appendChild(c)});
 }
 function promo(){fetch("promo.json?"+Date.now()).then(function(r){return r.json()}).then(function(j){var h=$("#promo");(j.corporate||[]).forEach(function(x){h.appendChild(el("div",{class:"promo"},[el("span",{class:"label",text:"New from corporate"}),el("h3",{text:x.title}),el("p",{class:"sub",text:x.body}),x.link?el("a",{class:"btn small",href:x.link,rel:"noopener",text:x.cta||"Shop it"}):el("span")]))})}).catch(function(){})}
+function video(){
+  var v=$("#ssVid");if(!v)return;var SRC="https://s.brd.so/e1gIB2gaNob2M7UcH78PrpD3qBgx.m3u8",ready=false;
+  v.addEventListener("play",function(){
+    if(ready)return;ready=true;
+    if(v.canPlayType("application/vnd.apple.mpegurl")){v.src=SRC;v.play();return}
+    var s=document.createElement("script");s.src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.13/hls.min.js";
+    s.onload=function(){if(window.Hls&&Hls.isSupported()){var h=new Hls();h.loadSource(SRC);h.attachMedia(v);h.on(Hls.Events.MANIFEST_PARSED,function(){v.play()})}};
+    document.head.appendChild(s);
+  },{once:true});
+  v.addEventListener("click",function(){if(!ready)v.play()});
+}
 $("#openBox").onclick=openBox;
-ladder();vault();promo();renderBar();boot();
+ladder();vault();video();promo();renderBar();boot();
 })();

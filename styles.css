@@ -144,3 +144,11 @@ h3.mini{font:600 .72rem/1 var(--sans);letter-spacing:.16em;text-transform:upperc
 .ben.on .tok:has(.gc),.ben.on .tok:has(.bagimg){background:transparent}
 .future{background:var(--char);border-left:4px solid var(--volt);padding:12px;margin:0}
 .btn.go{font-size:1.05rem;padding:16px;text-align:center}
+.ssnote{background:var(--char);border:1px solid var(--line);padding:14px;margin:0 0 18px;display:flex;flex-direction:column;gap:12px}
+.ssnote[hidden]{display:none}
+.ssnote h3{font-size:1.35rem}
+.ssnote h3 .it{font-family:var(--serif);font-style:italic;text-transform:lowercase;color:var(--volt)}
+.ssg{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(min-width:760px){.ssg{grid-template-columns:repeat(4,1fr)}}
+.ssg img,.ssv{width:100%;aspect-ratio:4/5;object-fit:cover;background:#000;border:1px solid var(--line);display:block}
+.ssv video{width:100%;height:100%;object-fit:cover;display:block}
