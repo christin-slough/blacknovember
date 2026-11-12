@@ -634,5 +634,43 @@
     "qFWHH8D7aKMybTdIsYhFyEW0T33Q.jpg:v"
    ]
   }
+ ],
+ "strips": [
+  {
+   "id": "clean",
+   "pill": "Clean beauty",
+   "label": "Clean beauty",
+   "h": "Clean beauty, <span class=\"it\">the standard</span>",
+   "sub": "Cruelty-free and vegan, no phthalates, harsh sulfates, drying waxes, formaldehydes, carcinogens or PFAs, made in cGMP-certified facilities, and formulated with safety and transparency since 1999. Swipe through.",
+   "media": [
+    "qqIpXJgJJGlL2R6Qbbhcqm9hz157.png",
+    "iQzSRBsN0hgAfiMC3BCaJbQ3N8tS.png",
+    "bKpefo6ntBjwgxKwz03KzEheNVTv.png",
+    "gDR734TuG7UjtifMUyy928mOukwf.png",
+    "DKDsSsHf222EamEWA3aqkHPI8A70.png",
+    "d1b2PreT98C6PgJek2hvtaylrzrP.png",
+    "mUtGSQWPtYpKiiBLEZRaX9bLYlWl.png",
+    "incGaDmkG3ZI1Yfl13L0g7HSPcUR.jpg:v",
+    "Rr5bYmU4hfSQKGvPcfesAC94hIYC.png",
+    "XopH4MaM7suhSyEFeid0iNTQaGPu.png",
+    "B51P8XNS5CCM3yeoNDJSsoYOtG0F.png"
+   ]
+  },
+  {
+   "id": "trios",
+   "pill": "Skincare sets",
+   "label": "Skincare sets",
+   "h": "Not sure where to <span class=\"it\">start</span>?",
+   "sub": "The skincare regimen sets, matched to your skin type. Swipe through, then ask me and I'll match you.",
+   "media": [
+    "1vLBIJINfBqF52wG9B38bGeclefr.png",
+    "fDSFUeKwMOHerFD0I5EMk5rE6f4H.png",
+    "xHCuQaiSq7VsnBbSwsoSdpM7fNEY.jpg:v",
+    "4Vt2jsQpFABEmMkUk9SZqtX7TD0A.png",
+    "BzK4QNbk8KjdKkkFFW7OdpIHHPLZ.png",
+    "8A1ew9T6Cy3D1ir5hEDN7xxZ6Spz.png",
+    "NktG0zwC3VhofZrTZW7MKWRjxf9G.png"
+   ]
+  }
  ]
 }
