@@ -164,11 +164,21 @@ function boot(){
     var show=function(i){tb.querySelectorAll("button").forEach(function(b,k){b.setAttribute("aria-pressed",k===i?"true":"false")});fill("#giftGrid",tabs[i][1]())};
     tabs.forEach(function(t,i){var b=el("button",{type:"button","aria-pressed":"false",text:t[0]});b.onclick=function(){show(i)};tb.appendChild(b)});
     show(0);
-    var by=function(re){return rest.filter(function(p){return re.test(p.product_type)})};
-    fill("#g-lips",by(/^Lips$/).filter(function(p){return !isSet(p)}));
-    fill("#g-eyes",by(/^Eyes$/));
-    fill("#g-face",by(/^Face$/));
-    fill("#g-skin",by(/^(Treatments|Moisturizers|Bath&Body|Remover|Cleanser|Masks|Multi-Use)$/));
+    var FACE=/foundation|tinted moisturizer|color correcting|corrective|concealer|blush|bronzer|loose powder|pressed powder|primer|highlighter|pearlizer|illuminating|setting/i;
+    var sec=function(p){
+      var t=clean(p.title);
+      if(isSet(p))return null;
+      if(/^(Lips|Multi-Use)$/.test(p.product_type)&&!/serum|moistur/i.test(t))return "lips";
+      if(FACE.test(t)&&!/lip/i.test(t))return "face";
+      if(/^Eyes$/.test(p.product_type))return "eyes";
+      if(/^Face$/.test(p.product_type))return "face";
+      if(/^(Treatments|Moisturizers|Bath&Body|Remover|Cleanser|Masks)$/.test(p.product_type))return "skin";
+      return null;
+    };
+    var groups={lips:[],eyes:[],face:[],skin:[]};
+    rest.forEach(function(p){var k=sec(p);if(k)groups[k].push(p)});
+    var order=function(a,b){var rank=function(p){return /liquid lip color|original foundation|color correcting tinted|eyeshadow/i.test(p.title)?0:1};return rank(a)-rank(b)};
+    Object.keys(groups).forEach(function(k){groups[k].sort(order);fill("#g-"+k,groups[k])});
     $("#stamp").textContent="Checked "+new Date().toLocaleString("en-US",{weekday:"short",month:"numeric",day:"numeric",hour:"numeric",minute:"2-digit"});
   }).catch(function(){
     ["#giftGrid","#g-lips","#g-eyes","#g-face","#g-skin"].forEach(function(id){var g=$(id);g.innerHTML="";g.appendChild(el("p",{class:"empty",text:"The shelves are slow to load. Refresh, or tap below to shop everything with my 15%."}))});
