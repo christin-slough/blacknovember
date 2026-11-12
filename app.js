@@ -40,7 +40,7 @@ function renderBar(){
   w.hidden=false;
   var s=boxSpend(),ti=tierInfo(s),saved=boxRetail()*(1-DISC);
   var line="<b>"+n+" in my box</b> - "+money(s)+" after my 15% <span class='sv'>you save "+money(saved)+"</span>";
-  line+="<br><span class='rw'>+ about "+money(s*RW)+" back in Rewards cash</span>";
+  line+="<br><span class='rw'>+ "+money(s*RW)+" back in Rewards cash</span>";
   if(ti.cur)line+="<br>Unlocked: "+ti.cur.t;
   if(ti.next)line+="<br>"+money(ti.next.at-s)+" more reaches $"+ti.next.at+": "+ti.next.t;else line+="<br>Top of the ladder. Nice.";
   $("#barText").innerHTML=line;
@@ -80,7 +80,7 @@ function openBox(){
     ]));
     var list=el("div",{class:"bens"});
     list.appendChild(ben("on","-"+money(saved).replace(".00",""),"You're saving "+money(saved),"My 15% is already on every item in your box."));
-    list.appendChild(ben("on","10%","About "+money(rw)+" back in Rewards cash","Spend it on a future SeneGence order."));
+    list.appendChild(ben("on","10%",money(rw)+" back in Rewards cash","Spend it on a future SeneGence order."));
     list.appendChild(ben("on","FREE","A free mystery mini","Added to your cart at checkout, while supplies last."));
     if(s>=150)list.appendChild(ben("on","SHIP","Free shipping","You cleared $150."));else list.appendChild(ben("off","SHIP","Free shipping at $150",money(150-s)+" more to unlock it."));
     if(ent>=1)list.appendChild(ben("on",String(ent),ent+(ent===1?" drawing entry":" drawing entries"),"Every $50 is an entry, and the month adds up. Over $1,100 in prizes."));else list.appendChild(ben("off","1","Your first drawing entry",money(50-s)+" more to unlock it."));
@@ -95,7 +95,7 @@ function openBox(){
     b.appendChild(el("div",{class:"meter"},[el("i",{style:"width:"+Math.min(100,s/top*100)+"%"})]));
     b.appendChild(el("p",{class:"future",html:"<b>And it keeps giving.</b> Spend your Amazon gift card on whatever you like. Use your Rewards cash on your next SeneGence order."}));
     var a=el("a",{class:"btn go",href:cartLink(items),rel:"noopener",text:"Check out with my 15%"});b.appendChild(a);
-    b.appendChild(el("p",{class:"note",text:"This opens checkout on the shop with everything in your cart. Rewards cash is an estimate. The ladder adds up across the month."}));
+    b.appendChild(el("p",{class:"note",text:"This opens checkout on the shop with everything in your cart. The ladder adds up across the month."}));
     var clr=el("button",{class:"btn ghost small",type:"button",text:"Empty my box"});clr.onclick=function(){box={};saveBox();renderBar();d.close()};b.appendChild(clr);
   }
   if(!d.open)d.showModal();
@@ -206,6 +206,7 @@ function boot(){
       var t=clean(p.title);
       if(isSet(p))return null;
       if(p.product_type==="Lips"||(p.product_type==="Multi-Use"&&!/serum|moistur/i.test(t)))return "lips";
+      if(/lash primer|undersense/i.test(t))return "eyes";
       if(FACE.test(t)&&!/lip/i.test(t))return "face";
       if(/^Eyes$/.test(p.product_type))return "eyes";
       if(/^Face$/.test(p.product_type))return "face";
