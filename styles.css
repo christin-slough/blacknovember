@@ -166,3 +166,6 @@ h3.mini{font:600 .72rem/1 var(--sans);letter-spacing:.16em;text-transform:upperc
 .swipe>img,.swipe>.ssv{width:auto;aspect-ratio:1;object-fit:contain;background:#000;border:1px solid var(--line);display:block}
 .swipe>.ssv video{width:100%;height:100%;object-fit:contain;display:block}
 .hint{font:600 .68rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ash);margin:0 0 -4px}
+
+.tiles.swipe>*{flex:0 0 74%;max-width:300px}
+.tiles.swipe .tile{margin:0}
