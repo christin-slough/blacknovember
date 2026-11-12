@@ -198,7 +198,7 @@ function boot(){
     var stuffers=function(){var out=[];SS.forEach(function(re){all.filter(function(p){return !isSet(p)&&p.product_type!=="Collection"&&!/duo|trio|collection/i.test(p.title)&&re.test(clean(p.title))&&out.indexOf(p)<0}).forEach(function(p){out.push(p)})});return out};
     var tabs=[["Sets",function(){return gifts.filter(function(p){return !inFeat(p)})}],["Under $50",function(){return rest.filter(function(p){var x=priceOf(p);return x!==null&&x<=50&&!isSet(p)}).slice(0,16)}],["Stocking stuffers",stuffers]];
     var tb=$("#giftTabs");
-    var show=function(i){tb.querySelectorAll("button").forEach(function(b,k){b.setAttribute("aria-pressed",k===i?"true":"false")});fill("#giftGrid",tabs[i][1]());var n=$("#ssNote");if(n)n.hidden=(i!==2)};
+    var show=function(i){tb.querySelectorAll("button").forEach(function(b,k){b.setAttribute("aria-pressed",k===i?"true":"false")});fill("#giftGrid",tabs[i][1]());var n=$("#ssNote");if(n)n.hidden=(i!==2);if(i===2&&ssInit)ssInit()};
     tabs.forEach(function(t,i){var b=el("button",{type:"button","aria-pressed":"false",text:t[0]});b.onclick=function(){show(i)};tb.appendChild(b)});
     show(0);
     var FACE=/foundation|tinted moisturizer|color correcting|corrective|concealer|blush|bronzer|loose powder|pressed powder|primer|highlighter|pearlizer|illuminating|setting/i;
@@ -274,16 +274,16 @@ function vault(){
   MORE.forEach(function(x){var c=el("div",{class:"mc"});c.appendChild(crop(x[0],x[1],x[2]));m.appendChild(c)});
 }
 function promo(){fetch("promo.json?"+Date.now()).then(function(r){return r.json()}).then(function(j){var h=$("#promo");(j.corporate||[]).forEach(function(x){h.appendChild(el("div",{class:"promo"},[el("span",{class:"label",text:"New from corporate"}),el("h3",{text:x.title}),el("p",{class:"sub",text:x.body}),x.link?el("a",{class:"btn small",href:x.link,rel:"noopener",text:x.cta||"Shop it"}):el("span")]))})}).catch(function(){})}
+var ssInit=null;
 function video(){
-  var v=$("#ssVid");if(!v)return;var SRC="https://s.brd.so/e1gIB2gaNob2M7UcH78PrpD3qBgx.m3u8",ready=false;
-  v.addEventListener("play",function(){
-    if(ready)return;ready=true;
-    if(v.canPlayType("application/vnd.apple.mpegurl")){v.src=SRC;v.play();return}
+  var v=$("#ssVid");if(!v)return;var SRC="https://s.brd.so/e1gIB2gaNob2M7UcH78PrpD3qBgx.m3u8",done=false;
+  ssInit=function(){
+    if(done)return;done=true;
+    if(v.canPlayType("application/vnd.apple.mpegurl")){v.src=SRC;return}
     var s=document.createElement("script");s.src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.13/hls.min.js";
-    s.onload=function(){if(window.Hls&&Hls.isSupported()){var h=new Hls();h.loadSource(SRC);h.attachMedia(v);h.on(Hls.Events.MANIFEST_PARSED,function(){v.play()})}};
+    s.onload=function(){if(window.Hls&&Hls.isSupported()){var h=new Hls({autoStartLoad:false});h.loadSource(SRC);h.attachMedia(v);v.addEventListener("play",function(){h.startLoad(-1)},{once:true})}};
     document.head.appendChild(s);
-  },{once:true});
-  v.addEventListener("click",function(){if(!ready)v.play()});
+  };
 }
 $("#openBox").onclick=openBox;
 ladder();vault();video();promo();renderBar();boot();
