@@ -38,6 +38,7 @@ function renderBar(){
   $("#barText").innerHTML=line;
 }
 function openBox(){
+  var sh=$("#sheet");if(sh.open)sh.close();
   var d=$("#boxd"),b=$("#boxBody");b.innerHTML="";
   var items=boxItems();
   var hd=el("div",{class:"hd"},[el("h2",{text:"My box"}),el("button",{class:"x",type:"button","aria-label":"Close",text:"×"})]);
