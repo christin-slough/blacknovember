@@ -332,10 +332,6 @@ function video(){
     document.head.appendChild(s);
   };
 }
-$("#openBox").onclick=openBox;
-ladder();vault();video();promo();renderBar();boot();
-})();
-
 function renderStrips(S){
   var host=$("#strips");if(!host)return;
   S.forEach(function(s){
@@ -347,3 +343,6 @@ function renderStrips(S){
     sec.appendChild(r);host.appendChild(sec);
   });
 }
+$("#openBox").onclick=openBox;
+ladder();vault();video();promo();renderBar();boot();
+})();
