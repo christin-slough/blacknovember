@@ -196,5 +196,43 @@
     "K0oJho1hMRKTPJVfj9FMovq1iWMH.jpg:v"
    ]
   }
+ ],
+ "eyes": [
+  {
+   "name": "ShadowSense Eyeshadow",
+   "re": "shadowsense eyeshadow",
+   "media": [
+    "aqc6WA8Ik3gWlxAt1tvGmfJxgisQ.png",
+    "xrsNxJZHasRBWan1ZKtiS7Z3qITS.jpg:v",
+    "rOcMveb5aYEF2yzvi0n38Rvp7LDN.png",
+    "a4VZ6XGylxznYjwxxpuXcSRVAkV8.jpg:v",
+    "X8sCK46eLyUdKSq5uMJrVzj0GidV.jpg:v",
+    "RWLAO1SmHhKqRIi07kjBLKTgedj3.png",
+    "iWSqYEJFU7eeVmnGHHPsyeiOq47u.png",
+    "orxifoomQhJi1vfIy8slLGnID2Nx.png",
+    "bTxqPCeXheAFKFHT0sfCKrhHV8qz.png",
+    "C9tWZ344MN30DZ48yX1snAlQqOX9.png"
+   ]
+  },
+  {
+   "name": "Glowify Eyeshadow Sticks",
+   "re": "eyeshadow stick",
+   "media": [
+    "ehcQIEIuQdeDWLfT5Ww87sFJN0wJ.png",
+    "Xrzdt6NLepJ5d91euNKr4hIioiXC.png",
+    "v8mFz0ZIDYr3XDfYrEySuEsUDZXm.jpg:v",
+    "hLJ5c9n4ZLUDtLt8NqcqDdQlkOzp.png",
+    "buAcJOmuVVyvy7Z1StgO7nX43nEu.jpg:v"
+   ]
+  },
+  {
+   "name": "VolumeIntense Mascara",
+   "re": "volumeintense",
+   "media": [
+    "pJkhA1nIHIldVjtqhaNRdQKq6Jza.png",
+    "NaEjq5QG5ZC6E6HfpyUHgeenvUkE.jpg:v",
+    "ph9U4p7W3bQK82uGB7DFlZH37WWp.png"
+   ]
+  }
  ]
 }
