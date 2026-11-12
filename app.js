@@ -148,6 +148,49 @@ function card(p){
 }
 function fill(id,list){var g=$(id);g.innerHTML="";if(!list.length){g.appendChild(el("p",{class:"empty",text:"Checking the shelves. Check back soon."}));return}list.forEach(function(p){g.appendChild(card(p))})}
 
+
+/* feature blocks (Boards media) */
+var vids=[];
+function mediaEl(m){
+  if(/:v$/.test(m)){
+    var fn=m.replace(/:v$/,""),id=fn.split(".")[0];
+    var w=el("div",{class:"ssv"});
+    var v=el("video",{controls:"",playsinline:"",preload:"none",poster:"https://i.brd.so/"+fn,"aria-label":"Video"});
+    v.dataset.src="https://s.brd.so/"+id+".m3u8";w.appendChild(v);vids.push(v);return w;
+  }
+  return el("img",{src:"https://i.brd.so/"+m,alt:"",loading:"lazy"});
+}
+function attachVid(v){
+  if(v.dataset.on)return;v.dataset.on="1";var SRC=v.dataset.src;
+  if(v.canPlayType("application/vnd.apple.mpegurl")){v.src=SRC;return}
+  function go(){if(window.Hls&&Hls.isSupported()){var h=new Hls({autoStartLoad:false});h.loadSource(SRC);h.attachMedia(v);v.addEventListener("play",function(){h.startLoad(-1)},{once:true})}}
+  if(window.Hls){go();return}
+  if(!window.__hlsq){window.__hlsq=[];var s=document.createElement("script");s.src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.13/hls.min.js";s.onload=function(){window.__hlsq.forEach(function(f){f()})};document.head.appendChild(s)}
+  window.__hlsq.push(go);
+}
+function watchVids(){
+  if(!("IntersectionObserver" in window)){vids.forEach(attachVid);return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){attachVid(e.target);io.unobserve(e.target)}})},{rootMargin:"400px"});
+  vids.forEach(function(v){io.observe(v)});
+}
+function featureBlocks(sec,pool,feats){
+  var host=$("#g-"+sec);if(!host)return pool;
+  var rest=pool.slice();
+  (feats||[]).forEach(function(f){
+    var re=new RegExp(f.re,"i");
+    var mine_=rest.filter(function(p){return re.test(clean(p.title))});
+    if(!mine_.length&&!(f.media||[]).length)return;
+    rest=rest.filter(function(p){return mine_.indexOf(p)<0});
+    var b=el("div",{class:"fx"});
+    b.appendChild(el("h3",{html:f.h||esc(f.name)}));
+    if(f.sub)b.appendChild(el("p",{class:"sub",text:f.sub}));
+    if((f.media||[]).length){var g=el("div",{class:"ssg"});f.media.forEach(function(m){g.appendChild(mediaEl(m))});b.appendChild(g)}
+    if(mine_.length){var gr=el("div",{class:"grid"});mine_.forEach(function(p){gr.appendChild(card(p))});b.appendChild(gr)}
+    host.parentNode.insertBefore(b,host);
+  });
+  return rest;
+}
+
 /* classification */
 var SKIP_T=/^(HairCare|Royal Reward|Supplies|Samples|Kit|Nails|Tools|Wellness|Top|T-Shirt|Jacket|Bag|Bathing Suit|Polo|Scarf|Dress|Purse|Blouse|BackPack)$/;
 var SKIP_N=/hair|shampoo|conditioner|toothpaste|sleep|nail|repurchase|order$|free promotions|\(\d+% off\)|^🎁|kit\b|sample|retiring/i;
@@ -216,7 +259,10 @@ function boot(){
     var groups={lips:[],eyes:[],face:[],skin:[]};
     rest.forEach(function(p){var k=sec(p);if(k)groups[k].push(p)});
     var order=function(a,b){var rank=function(p){return /liquid lip color|original foundation|color correcting tinted|eyeshadow/i.test(p.title)?0:1};return rank(a)-rank(b)};
-    Object.keys(groups).forEach(function(k){groups[k].sort(order);fill("#g-"+k,groups[k])});
+    fetch("features.json?"+Date.now()).then(function(r){return r.json()}).catch(function(){return {}}).then(function(F){
+      Object.keys(groups).forEach(function(k){groups[k].sort(order);var rest=featureBlocks(k,groups[k],F[k]);var h=$("#g-"+k);fill("#g-"+k,rest);if(rest.length&&h.previousElementSibling&&h.previousElementSibling.classList.contains("fx"))h.parentNode.insertBefore(el("h3",{class:"mini",text:"More "+k.replace("face","base face")}),h)});
+      watchVids();
+    });
     $("#stamp").textContent="Checked "+new Date().toLocaleString("en-US",{weekday:"short",month:"numeric",day:"numeric",hour:"numeric",minute:"2-digit"});
   }).catch(function(){
     ["#giftGrid","#g-lips","#g-eyes","#g-face","#g-skin"].forEach(function(id){var g=$(id);g.innerHTML="";g.appendChild(el("p",{class:"empty",text:"The shelves are slow to load. Refresh, or tap below to shop everything with my 15%."}))});

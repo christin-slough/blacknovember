@@ -152,3 +152,7 @@ h3.mini{font:600 .72rem/1 var(--sans);letter-spacing:.16em;text-transform:upperc
 @media(min-width:760px){.ssg{grid-template-columns:repeat(4,1fr)}}
 .ssg img,.ssv{width:100%;aspect-ratio:1;object-fit:contain;background:#000;border:1px solid var(--line);display:block}
 .ssv video{width:100%;height:100%;object-fit:contain;display:block}
+.fx{background:var(--char);border:1px solid var(--line);padding:14px;margin:0 0 22px;display:flex;flex-direction:column;gap:12px}
+.fx>h3{font-size:1.35rem}
+.fx>h3 .it{font-family:var(--serif);font-style:italic;text-transform:lowercase;color:var(--volt)}
+.fx .grid{margin-top:4px}

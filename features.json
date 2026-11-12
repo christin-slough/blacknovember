@@ -1,0 +1,125 @@
+{
+ "face": [
+  {
+   "name": "Silk Primer & Pore Minimizer",
+   "re": "silk primer",
+   "media": [
+    "ARnBoY51guaZWxcyeNrqb8xrNDe1.png",
+    "sCEn7WjaT6yqkQNbFqVSVt7hDLW3.jpg:v",
+    "71AN8wkcXO7YfekSXNWelIYr7onm.jpeg"
+   ]
+  },
+  {
+   "name": "Glowify Microbiome Serum Primer",
+   "re": "serum primer",
+   "media": [
+    "aE9ubxQNu1n8zXU0WzX4qLriVTcw.png",
+    "tO1yyutKHXIK53UmOWqbMpEpMkCv.jpg:v",
+    "mlmYu2fzUR8ZUJPIOuwZjEy9Tbxm.png"
+   ]
+  },
+  {
+   "name": "Concealer",
+   "re": "concealer",
+   "media": [
+    "ntB4mp9naESNvonwwRS5tYmvYWOR.png",
+    "SlkYA5LhKigKeveCh4KJ6isBuW0Y.png",
+    "GMFkbugO2jOlWql7Q39t0sYdGQz5.jpg:v",
+    "eJTT06vcenxozwkeaKjY4ToP7GIt.jpg:v"
+   ]
+  },
+  {
+   "name": "Original Foundation",
+   "re": "original foundation",
+   "media": [
+    "CbnN2gYnWmqsHnj4KB543uuV0Llj.png",
+    "ha96N73s3oP30DkvNs4TpSXwaivO.png",
+    "vQB7hImrXskRcmOignx8xnrBWeDQ.png",
+    "1kha6EpR6EZd4Nwrh64Mj5We6zV6.png",
+    "iFOhSwDRkhDYCh8QtQ56XrtI8Yz8.jpg:v",
+    "ywIg6vTnIbPWlpIazN3cD8gMQiGZ.jpg:v"
+   ]
+  },
+  {
+   "name": "Color Correcting Tinted Moisturizer",
+   "re": "tinted moisturizer",
+   "media": [
+    "UXicn56nu9XMLdcmT32yjwYWLC93.png",
+    "joFxzEZuLhnsFtPHUKkRYhWBWEZy.png",
+    "oSm5LefkeASciNxTBCNvRd0xJQGz.jpg:v",
+    "b3AlKTslZQJDVDjyEo7NdqkJEhLF.jpg:v",
+    "DHYFakgi8vqkBGawvSKAD1K6Db0h.jpeg",
+    "rDuES3WbOhpdtXlrQ40dmDpZDr7f.jpeg"
+   ]
+  },
+  {
+   "name": "Contouring Bronzer Cream",
+   "re": "contour",
+   "media": [
+    "OT5wYilJ2bfzaTcPycJxHxve5rxk.png",
+    "GsXn6JUW4lJpYpS3XsrSL42bEhM3.jpg:v",
+    "XnaeNyjarQ2ODEqrCYoFiDRjk3ZN.png",
+    "0tlMzp36O82LtYfahWemAQIFYmCL.png"
+   ]
+  },
+  {
+   "name": "Pearlizer Highlighter Wand",
+   "re": "pearlizer.*(wand|highlight)|highlighter",
+   "media": [
+    "lAlX2dPLQKjjnLF5OyuwIZn4Nk9C.png",
+    "k6LnhX9wXPbFAccZ6VdCHRJr5IBl.jpg:v",
+    "ZDFg0ZpcvGw2U1T5QWaHl2dBG51f.png"
+   ]
+  },
+  {
+   "name": "Pearlizer Foundation",
+   "re": "pearlizer",
+   "media": [
+    "ytYZJsMNmIGzPfyHoLxnq0q4J71N.png",
+    "Lr76V3Mo5J1vhR8Can4gg0ugnpNa.png",
+    "ilXQZkSvlkphwMR4kPj8CUf6k4wQ.jpg:v",
+    "UfN3eBpvKVKNoilmRsREM5MVzIed.jpeg"
+   ]
+  },
+  {
+   "name": "BlushSense",
+   "re": "blush",
+   "media": [
+    "dvYFwarFXB7OBztnqduONAuV9Ak0.png",
+    "BWNeKFdlVYVr7SK641NFYZ7ytj3n.png",
+    "dKIQvtkmnin9cAnsaB2TKd9lu7LD.jpg:v",
+    "HRUIRPfNlHVMGLY3iMjvIV1Zsrbv.jpg:v",
+    "0DX8VF8LVPtggyetiNCDBMe79Y23.png"
+   ]
+  },
+  {
+   "name": "Translucent Powders",
+   "re": "powder",
+   "media": [
+    "9nqRUpxGUkdQEbq3p3gAtRHKIOVP.png",
+    "exlFj4TeSaMHu0gTcf35UjAnAbvO.jpg:v",
+    "x3pWUGLWcpBVpe0mFOmdiNk7ULWz.png"
+   ]
+  },
+  {
+   "name": "Glowify Moisture Mist",
+   "re": "mist",
+   "media": [
+    "JE0LIDqizRs79ge8qFhzRPxiVaUi.png",
+    "qcffG7fYFJ9jznOwblF4WEb6STWW.jpg:v",
+    "PrzzAS05GRDpyibLz1gZtN6Df9X1.jpeg",
+    "TzTiwTxZe37WiVGVBJEOnLpMWjwc.jpg"
+   ]
+  },
+  {
+   "name": "Glowify ColorSense",
+   "re": "colorsense",
+   "media": [
+    "ToAriI91eaIMUhosDvC7UfvKpwsE.png",
+    "VmmBxufUtowiT9FCExZrgEyLQdKv.png",
+    "ITJjCxZr2pqwXJ6HOPGd6aGQUDfO.png",
+    "K0oJho1hMRKTPJVfj9FMovq1iWMH.jpg:v"
+   ]
+  }
+ ]
+}
