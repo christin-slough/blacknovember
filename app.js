@@ -80,7 +80,7 @@ function openBox(){
     ]));
     var list=el("div",{class:"bens"});
     list.appendChild(ben("on","-"+money(saved).replace(".00",""),"You're saving "+money(saved),"My 15% is already on every item in your box."));
-    list.appendChild(ben("on","10%","About "+money(rw)+" back in Rewards cash","Spend it on a future SeneGence order. That's free product later."));
+    list.appendChild(ben("on","10%","About "+money(rw)+" back in Rewards cash","Spend it on a future SeneGence order."));
     list.appendChild(ben("on","FREE","A free mystery mini","Added to your cart at checkout, while supplies last."));
     if(s>=150)list.appendChild(ben("on","SHIP","Free shipping","You cleared $150."));else list.appendChild(ben("off","SHIP","Free shipping at $150",money(150-s)+" more to unlock it."));
     if(ent>=1)list.appendChild(ben("on",String(ent),ent+(ent===1?" drawing entry":" drawing entries"),"Every $50 is an entry, and the month adds up. Over $1,100 in prizes."));else list.appendChild(ben("off","1","Your first drawing entry",money(50-s)+" more to unlock it."));
