@@ -168,7 +168,7 @@ function boot(){
     var sec=function(p){
       var t=clean(p.title);
       if(isSet(p))return null;
-      if(/^(Lips|Multi-Use)$/.test(p.product_type)&&!/serum|moistur/i.test(t))return "lips";
+      if(p.product_type==="Lips"||(p.product_type==="Multi-Use"&&!/serum|moistur/i.test(t)))return "lips";
       if(FACE.test(t)&&!/lip/i.test(t))return "face";
       if(/^Eyes$/.test(p.product_type))return "eyes";
       if(/^Face$/.test(p.product_type))return "face";
