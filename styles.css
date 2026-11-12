@@ -91,3 +91,13 @@ footer{padding:40px 0 20px;color:var(--ash);font-size:.78rem;display:flex;flex-d
 .gc{position:relative;display:inline-flex;align-items:flex-start;justify-content:flex-start;width:64px;height:40px;background:#000;border:1px solid var(--ash);border-radius:4px;padding:4px 6px;font:400 1.05rem/1 var(--display);color:var(--white)}
 .gc:after{content:"";position:absolute;left:10px;right:10px;bottom:7px;height:7px;border-bottom:2px solid var(--volt);border-radius:0 0 50% 50%}
 .bagimg{width:64px;height:64px;object-fit:cover;object-position:left center;border:1px solid var(--ash);background:#000}
+
+.pzgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(min-width:700px){.pzgrid{grid-template-columns:repeat(4,1fr)}}
+.pz{aspect-ratio:1/.8;overflow:hidden;background:#000;border:1px solid var(--line)}
+.pz img{width:100%;display:block;margin-top:-22%}
+.drawings{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.drawings div{background:var(--char);border:1px solid var(--line);padding:14px;display:flex;flex-direction:column;gap:4px}
+.drawings b{font:400 1.15rem/1.05 var(--display);text-transform:uppercase;color:var(--volt)}
+.drawings span{font-size:.85rem;color:#d6d6d9}
+img.how{width:100%;max-width:560px;margin:0 auto;border:1px solid var(--line)}
