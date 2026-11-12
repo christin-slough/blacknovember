@@ -179,7 +179,7 @@ function featureBlocks(sec,pool,feats){
   (feats||[]).forEach(function(f){
     var re=new RegExp(f.re,"i");
     var mine_=rest.filter(function(p){return re.test(clean(p.title))});
-    if(!mine_.length&&!(f.media||[]).length)return;
+    if(!mine_.length)return;
     rest=rest.filter(function(p){return mine_.indexOf(p)<0});
     var b=el("div",{class:"fx"});
     b.appendChild(el("h3",{html:f.h||esc(f.name)}));
