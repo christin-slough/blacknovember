@@ -1,13 +1,88 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Black November - Shop With Me</title>
-<meta name="description" content="Link preview test: title, description and image.">
+<meta name="description" content="Everything for Black November in one place. My 15% is already on every link.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Black November - Shop With Me">
-<meta property="og:description" content="Link preview test: title, description and image.">
+<meta property="og:description" content="Everything for Black November in one place. My 15% is already on every link.">
 <meta property="og:image" content="https://christin-slough.github.io/blacknovember/og.jpg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<style>body{font-family:system-ui,sans-serif;margin:0;padding:32px 16px;background:#faf6f4;color:#2a1d22}main{max-width:34rem;margin:0 auto}a{display:inline-block;background:#8a2a4a;color:#fff;padding:12px 20px;border-radius:6px;text-decoration:none;font-weight:600}</style></head>
-<body><main><h1>Black November - Shop With Me</h1><p>Test page, Thu 11/12. If you can read this signed out, public hosting works.</p>
-<a href="https://www.senegence.com/discount/192358-15TU0M3F9M-15?pws=superherolips">Shop With Me</a></main></body></html>
+<meta name="theme-color" content="#0b0b0c">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital@1&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head><body>
+<div class="wrap">
+<div class="top"><span class="label">Black November</span><span class="label">bn 26</span></div>
+<header class="hero" id="top">
+  <h1>Black <span class="it">november</span> is <span class="hi">here</span></h1>
+  <p>This is the biggest event of my whole year. Everything is in one place, my 15% is already on every link, and I'm a text away if you want help picking. Order by <b>Mon 11/30</b>.</p>
+  <div style="display:flex;gap:12px;flex-wrap:wrap">
+    <a class="btn" href="#sets">Start shopping</a>
+    <a class="btn ghost" href="#ladder">How the prizes work</a>
+  </div>
+</header>
+<nav class="pills" aria-label="Sections">
+  <a href="#sets">Sets &amp; gifts</a><a href="#lips">Lips</a><a href="#eyes">Eyes</a><a href="#face">Base face</a><a href="#skin">Skin &amp; body</a><a href="#ladder">Prizes</a><a href="#details">Details</a>
+</nav>
+
+<div id="promo"></div>
+
+<section id="stack">
+  <span class="label">The stack</span>
+  <h2>What you get on <span class="it">every</span> order</h2>
+  <div class="stack">
+    <div class="panel"><b>15% off</b><span>Already on every button here. Stacks with bundles and sale items.</span></div>
+    <div class="panel"><b>10% back</b><span>In Rewards cash after you order.</span></div>
+    <div class="panel"><b>Free mystery mini</b><span>A surprise holiday mini with every order, while supplies last.</span></div>
+    <div class="panel"><b>Free shipping at $150</b><span>Plus a gift card at every step of the ladder.</span></div>
+  </div>
+</section>
+
+<section id="sets">
+  <span class="label">Holiday sets &amp; gifts</span>
+  <h2>Gift it. Or keep it. <span class="it">I won't tell.</span></h2>
+  <p class="sub">Each collection comes with a free cosmetic bag while supplies last.</p>
+  <div id="featured" class="feature" aria-live="polite"></div>
+  <div class="tabs" id="giftTabs" role="group" aria-label="Gift filters"></div>
+  <div id="giftGrid" class="grid"></div>
+</section>
+
+<section id="lips"><span class="label">Lips</span><h2>Lips that <span class="it">stay</span></h2><div id="g-lips" class="grid"></div></section>
+<section id="eyes"><span class="label">Eyes</span><h2>Eyes <span class="it">open</span></h2><div id="g-eyes" class="grid"></div></section>
+<section id="face"><span class="label">Base face</span><h2>Base <span class="it">face</span></h2><div id="g-face" class="grid"></div></section>
+<section id="skin"><span class="label">Skin &amp; body</span><h2>Skin &amp; <span class="it">body</span></h2><div id="g-skin" class="grid"></div></section>
+
+<section id="ladder">
+  <span class="label">The Black November ladder</span>
+  <h2>Every $50 is <span class="hi">an entry</span></h2>
+  <p class="sub">It adds up all month, counted after your 15%. Over $1,100 in prizes and 5 special drawings. Winners are drawn the first week of December.</p>
+  <div class="ladder" id="ladderRows"></div>
+  <p class="note">Your first 10 orders get a bonus $5 gift card and an entry in the sunglasses drawing.</p>
+</section>
+
+<section id="details">
+  <span class="label">The details</span>
+  <h2>Good to <span class="it">know</span></h2>
+  <div class="facts">
+    <div><b>Order by</b>Mon 11/30 to count for the month.</div>
+    <div><b>Shipping</b>Standard orders in by 2:00 PM CT ship the next business day. For Christmas, order by Dec 14 (Ground), Dec 20 (2-Day) or Dec 21 (Overnight). No guarantee before Christmas.</div>
+    <div><b>Using Kiss &amp; Tell points?</b>Pick points at checkout instead of the 15%. It's one code per order.</div>
+    <div><b>Love it or return it</b>My 90-day guarantee has you covered. Ask me about shade matching.</div>
+    <div><b>Not sure what to pick?</b><a href="https://form.jotform.com/261125870561152" rel="noopener">Take the free Beauty Profile</a> and I'll match you.</div>
+    <div><b>Wear time</b>LipSense color lasts up to 18 hours.</div>
+  </div>
+</section>
+<footer>
+  <span>Prices and stock are live from the shop each time you open this page. Your 15% applies at checkout.</span>
+  <span id="stamp"></span>
+</footer>
+</div>
+
+<div class="barwrap" id="barwrap" hidden><div class="bar"><div class="t" id="barText"></div><button class="btn small" id="openBox" type="button">View my box</button></div></div>
+
+<dialog id="sheet" aria-label="Choose a shade"><div class="sheet" id="sheetBody"></div></dialog>
+<dialog id="boxd" aria-label="My box"><div class="sheet" id="boxBody"></div></dialog>
+<script src="app.js"></script>
+</body></html>
