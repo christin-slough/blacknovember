@@ -184,9 +184,9 @@ function featureBlocks(sec,pool,feats){
     var b=el("div",{class:"fx"});
     b.appendChild(el("h3",{html:f.h||esc(f.name)}));
     if(f.sub)b.appendChild(el("p",{class:"sub",text:f.sub}));
-    var g=el("div",{class:"ssg fxg"});var items=(f.media||[]).map(function(m){return mediaEl(m)});
+    var g=el("div",{class:"ssg fxg swipe"});var items=(f.media||[]).map(function(m){return mediaEl(m)});
     var cards=mine_.map(function(p){return card(p)});
-    var at=Math.min(1,items.length);
+    var at=0;
     items.splice.apply(items,[at,0].concat(cards));
     items.forEach(function(n){g.appendChild(n)});b.appendChild(g);
     host.parentNode.insertBefore(b,host);
