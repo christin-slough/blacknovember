@@ -184,8 +184,11 @@ function featureBlocks(sec,pool,feats){
     var b=el("div",{class:"fx"});
     b.appendChild(el("h3",{html:f.h||esc(f.name)}));
     if(f.sub)b.appendChild(el("p",{class:"sub",text:f.sub}));
-    if((f.media||[]).length){var g=el("div",{class:"ssg"});f.media.forEach(function(m){g.appendChild(mediaEl(m))});b.appendChild(g)}
-    if(mine_.length){var gr=el("div",{class:"grid"});mine_.forEach(function(p){gr.appendChild(card(p))});b.appendChild(gr)}
+    var g=el("div",{class:"ssg fxg"});var items=(f.media||[]).map(function(m){return mediaEl(m)});
+    var cards=mine_.map(function(p){return card(p)});
+    var at=Math.min(1,items.length);
+    items.splice.apply(items,[at,0].concat(cards));
+    items.forEach(function(n){g.appendChild(n)});b.appendChild(g);
     host.parentNode.insertBefore(b,host);
   });
   return rest;
