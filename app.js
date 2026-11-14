@@ -336,8 +336,7 @@ function video(){
   };
 }
 function renderStrips(S){
-  var host=$("#strips");if(!host)return;
-  S.forEach(function(s){
+  S.forEach(function(s){var host=$("#"+(s.host||"strips"));if(!host)return;
     var sec=el("section",{id:s.id});
     sec.appendChild(el("span",{class:"label",text:s.label}));
     sec.appendChild(el("h2",{html:s.h}));

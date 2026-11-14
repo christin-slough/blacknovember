@@ -637,6 +637,32 @@
  ],
  "strips": [
   {
+   "id": "meet",
+   "host": "meetHost",
+   "pill": "",
+   "label": "Meet me",
+   "h": "Shop with <span class=\"it\">me</span>",
+   "sub": "Real lips, real shades, on real me. Swipe through.",
+   "media": [
+    "ejGUpiIIcqmwv9Z0Ds6VBugEOYsL.jpeg",
+    "ZwgrIlhahFd71D6Vp1M2aWuNuLzV.png",
+    "50GPM8GILT22KPKIN3OVJaRXxne2.jpg",
+    "1JURuV1wDQmpO4o2CnJR7nLeWpsl.jpeg",
+    "PgsrcaG3Z2jzzztUW6ZdZ7x1nutq.jpg",
+    "CuQRtY2FO9RU5AZ1u0pgVLRnPrce.jpg",
+    "gPSoaLxc0dbC6ms1rIBNdRCirgSM.jpg",
+    "W0WpfPCZ76UVolhUsNywr1BQk1EH.jpg",
+    "jXL7AvJ2dG5V4GItZjW9ngJbAIXy.jpeg",
+    "JMa84ydJUjDL7STYUZXoEbUkXtiU.jpg",
+    "qF8W1jkxhaaWgoPCed0QtNzfatNv.jpg",
+    "7djiMWbUp8XseK3Q4D3jXEOsKiyQ.jpeg",
+    "LRyHGNVRL6MLwXfmT7Bbo8Bt6Eb2.jpeg",
+    "nueC4ggc6H3DYusfTUDxjNXgiE1O.jpg",
+    "QgVbKijd3dbZOuhHbeFwbA9DEFRq.jpeg",
+    "5LqkfId4gEJJVA3ZnWlzfT6YIvpo.jpg"
+   ]
+  },
+  {
    "id": "clean",
    "pill": "Clean beauty",
    "label": "Clean beauty",
